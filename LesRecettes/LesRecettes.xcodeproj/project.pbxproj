@@ -16,6 +16,7 @@
 		E507DC7829B65F0E00B7CC1D /* LesRecettesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507DC7729B65F0E00B7CC1D /* LesRecettesTests.swift */; };
 		E507DC8229B65F0E00B7CC1D /* LesRecettesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507DC8129B65F0E00B7CC1D /* LesRecettesUITests.swift */; };
 		E507DC8429B65F0E00B7CC1D /* LesRecettesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507DC8329B65F0E00B7CC1D /* LesRecettesUITestsLaunchTests.swift */; };
+		E5122EE929BFD20C00F79421 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5122EE829BFD20C00F79421 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E507DC7D29B65F0E00B7CC1D /* LesRecettesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LesRecettesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E507DC8129B65F0E00B7CC1D /* LesRecettesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesRecettesUITests.swift; sourceTree = "<group>"; };
 		E507DC8329B65F0E00B7CC1D /* LesRecettesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesRecettesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E5122EE829BFD20C00F79421 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +101,11 @@
 		E507DC5F29B65F0C00B7CC1D /* LesRecettes */ = {
 			isa = PBXGroup;
 			children = (
-				E507DC9229B65FF400B7CC1D /* View Model */,
-				E507DC9129B65FCE00B7CC1D /* Model */,
-				E507DC9029B65FC800B7CC1D /* Controller */,
+				E5122EE729BFD1EE00F79421 /* Model */,
+				E5122EE629BFD1D700F79421 /* View */,
+				E5122EEA29BFDFEA00F79421 /* ViewModel */,
 				E507DC6029B65F0C00B7CC1D /* AppDelegate.swift */,
 				E507DC6229B65F0C00B7CC1D /* SceneDelegate.swift */,
-				E507DC6429B65F0C00B7CC1D /* ViewController.swift */,
 				E507DC6629B65F0C00B7CC1D /* Main.storyboard */,
 				E507DC6929B65F0D00B7CC1D /* Assets.xcassets */,
 				E507DC6B29B65F0E00B7CC1D /* LaunchScreen.storyboard */,
@@ -130,25 +131,27 @@
 			path = LesRecettesUITests;
 			sourceTree = "<group>";
 		};
-		E507DC9029B65FC800B7CC1D /* Controller */ = {
+		E5122EE629BFD1D700F79421 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E507DC6429B65F0C00B7CC1D /* ViewController.swift */,
 			);
-			path = Controller;
+			path = View;
 			sourceTree = "<group>";
 		};
-		E507DC9129B65FCE00B7CC1D /* Model */ = {
+		E5122EE729BFD1EE00F79421 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E5122EE829BFD20C00F79421 /* Models.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E507DC9229B65FF400B7CC1D /* View Model */ = {
+		E5122EEA29BFDFEA00F79421 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "View Model";
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E507DC6529B65F0C00B7CC1D /* ViewController.swift in Sources */,
+				E5122EE929BFD20C00F79421 /* Models.swift in Sources */,
 				E507DC6129B65F0C00B7CC1D /* AppDelegate.swift in Sources */,
 				E507DC6329B65F0C00B7CC1D /* SceneDelegate.swift in Sources */,
 			);
