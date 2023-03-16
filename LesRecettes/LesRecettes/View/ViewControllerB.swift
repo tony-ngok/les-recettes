@@ -9,6 +9,8 @@ import UIKit
 
 class ViewControllerB: UIViewController {
 
+    let idRecette: String
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

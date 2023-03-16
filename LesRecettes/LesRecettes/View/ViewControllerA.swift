@@ -26,9 +26,9 @@ class ViewControllerA: UIViewController, UICollectionViewDataSource, UICollectio
         return cellule
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.performSegue(withIdentifier: <#T##String#>, sender: self)
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "info", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
