@@ -21,6 +21,7 @@
 		E5A23A6329C3527F009EA636 /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5A23A6129C3527F009EA636 /* RecipeCell.xib */; };
 		E5A23A6529C358A2009EA636 /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A23A6429C358A2009EA636 /* RecipesViewModel.swift */; };
 		E5A23A6729C35EF2009EA636 /* RecipeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A23A6629C35EF2009EA636 /* RecipeCellViewModel.swift */; };
+		E5A23A6B29C37005009EA636 /* ViewControllerB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A23A6A29C37005009EA636 /* ViewControllerB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		E5A23A6129C3527F009EA636 /* RecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
 		E5A23A6429C358A2009EA636 /* RecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		E5A23A6629C35EF2009EA636 /* RecipeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCellViewModel.swift; sourceTree = "<group>"; };
+		E5A23A6A29C37005009EA636 /* ViewControllerB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				E507DC6429B65F0C00B7CC1D /* ViewControllerA.swift */,
+				E5A23A6A29C37005009EA636 /* ViewControllerB.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5A23A6529C358A2009EA636 /* RecipesViewModel.swift in Sources */,
+				E5A23A6B29C37005009EA636 /* ViewControllerB.swift in Sources */,
 				E5A23A6229C3527F009EA636 /* RecipeCell.swift in Sources */,
 				E507DC6529B65F0C00B7CC1D /* ViewControllerA.swift in Sources */,
 				E5A23A6729C35EF2009EA636 /* RecipeCellViewModel.swift in Sources */,

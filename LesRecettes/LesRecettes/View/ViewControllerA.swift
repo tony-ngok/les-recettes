@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ViewControllerA.swift
 //  LesRecettes
 //
 //  Created by Tony Ngok on 06/03/2023.
@@ -10,7 +10,7 @@
 import UIKit
 
 // Controller: tie view & model together
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ViewControllerA: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var tableau: UICollectionView!
     var modèle = RecipesViewModel()
@@ -22,34 +22,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellule = tableau.dequeueReusableCell(withReuseIdentifier: RecipeCell.id, for: indexPath) as! RecipeCell
-        
-//        // https://stackoverflow.com/questions/23801418/uicollectionview-adding-image-to-a-cell
-//        let img: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 172, height: 258))
-//
-//        guard let urlImg = URL(string: résultats[indexPath.row].strMealThumb) else {
-//            return cellule
-//        }
-//        if let donnéeImg = try? Data(contentsOf: urlImg) {
-//            img.image = UIImage(data: donnéeImg) ?? UIImage()
-//        }
-//
-//        let titre: UILabel = UILabel(frame: CGRect(x: 0, y: 200, width: 172, height: 58))
-//        titre.backgroundColor = UIColor.darkGray
-//        titre.alpha = 0.85
-//        titre.text = résultats[indexPath.row].strMeal
-//        titre.textColor = UIColor.white
-//
-//        // https://www.folkstalk.com/2022/10/uilabel-make-bold-with-code-examples.html
-//        titre.font = UIFont.boldSystemFont(ofSize: 17)
-//
-//        titre.numberOfLines = 2
-//        titre.textAlignment = NSTextAlignment.center
-//        img.addSubview(titre)
-//
-//        cellule.addSubview(img)
         cellule.mod = modèle.unModèle(at: indexPath)
         return cellule
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        self.performSegue(withIdentifier: <#T##String#>, sender: self)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

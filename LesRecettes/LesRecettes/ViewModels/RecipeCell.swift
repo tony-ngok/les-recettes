@@ -18,6 +18,8 @@ class RecipeCell: UICollectionViewCell {
     class var nib: UINib {
         return UINib(nibName: id, bundle: nil)
     }
+    
+    // pseudo-initialiser: «initialise» class w/ cell view model
     var mod: RecipeCellViewModel? {
         didSet {
             img.image = self.mod?.img
