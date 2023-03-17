@@ -116,7 +116,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnD-Ic-wwH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="source_link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnD-Ic-wwH">
                                 <rect key="frame" x="16" y="703" width="358" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -159,6 +159,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XQH-TR-tcV"/>
+                    <connections>
+                        <outlet property="img" destination="jvx-lt-Id4" id="OZm-AD-vJg"/>
+                        <outlet property="ingr" destination="te2-hp-18a" id="ldd-C2-uL3"/>
+                        <outlet property="instr" destination="nsC-Mj-lf5" id="bxO-1A-RhP"/>
+                        <outlet property="lien" destination="cV0-fh-vLB" id="wO5-Qo-LJT"/>
+                        <outlet property="nom" destination="E4C-ju-SzA" id="G4C-0F-E6t"/>
+                        <outlet property="source" destination="vnD-Ic-wwH" id="8r1-mw-8Kc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNh-JA-6jW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

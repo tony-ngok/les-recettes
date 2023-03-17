@@ -13,7 +13,9 @@ import UIKit
 class ViewControllerA: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var tableau: UICollectionView!
-    var modèle = RecipesViewModel()
+    
+    var modèle = RecipesViewModel() // initialise view model
+    var idActuelle = ""
     
     // View: present data in user interface
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -27,7 +29,14 @@ class ViewControllerA: UIViewController, UICollectionViewDataSource, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.idActuelle = modèle.unModèle(at: indexPath).id
         self.performSegue(withIdentifier: "info", sender: self)
+    }
+    
+    // This function is called before the segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let b = segue.destination as! ViewControllerB
+        b.idRecette = self.idActuelle
     }
     
     override func viewDidLoad() {
