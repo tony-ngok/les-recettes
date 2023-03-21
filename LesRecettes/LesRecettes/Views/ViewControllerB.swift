@@ -25,6 +25,12 @@ class ViewControllerB: UIViewController {
         // Do any additional setup after loading the view.
         print("Recipe ID: \(idRecette)")
         initialisation()
+        
+        // https://stackoverflow.com/questions/33658521/how-to-make-a-uilabel-clickable
+        let leLien = UITapGestureRecognizer(target: self, action: #selector(ViewControllerB.ouvrirLeLien))
+        lien.addGestureRecognizer(leLien)
+        let leSource = UITapGestureRecognizer(target: self, action: #selector(ViewControllerB.ouvrirLeSource))
+        source.addGestureRecognizer(leSource)
     }
     
     func initialisation() {
@@ -44,6 +50,26 @@ class ViewControllerB: UIViewController {
         
         // https://www.programiz.com/swift-programming/library/array/joined
         ingr.text = filtré.joined(separator: "\n")
+    }
+    
+    // https://stackoverflow.com/questions/33658521/how-to-make-a-uilabel-clickable
+    @objc func ouvrirLeLien() {
+        let l = lien.text ?? ""
+        if (l != "") {
+            // https://stackoverflow.com/questions/41542409/how-to-open-youtube-app-with-youtube-id-on-a-button-click-in-ios
+            if let youtubeURL = URL(string: l) {
+                UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil) // redirect through safari
+            }
+        }
+    }
+    
+    @objc func ouvrirLeSource() {
+        let l = source.text ?? ""
+        if (l != "") {
+            if let url = URL(string: l) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
     }
 
     /*
