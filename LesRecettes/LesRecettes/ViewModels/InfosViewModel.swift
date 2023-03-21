@@ -31,9 +31,31 @@ class InfosViewModel: NSObject {
                 
                 information.nom = i.strMeal
                 information.instr = i.strInstructions
-                information.vid = i.strYoutube
-                information.ingr = [i.strIngredient1, i.strIngredient2, i.strIngredient3, i.strIngredient4, i.strIngredient5, i.strIngredient6, i.strIngredient7, i.strIngredient8, i.strIngredient9, i.strIngredient10, i.strIngredient11, i.strIngredient12, i.strIngredient13, i.strIngredient14, i.strIngredient15, i.strIngredient16, i.strIngredient17, i.strIngredient18, i.strIngredient19, i.strIngredient20]
-                information.source = i.strSource
+                information.vid = i.strYoutube ?? ""
+                
+                let j1 = i.strIngredient1 ?? ""
+                let j2 = i.strIngredient2 ?? ""
+                let j3 = i.strIngredient3 ?? ""
+                let j4 = i.strIngredient4 ?? ""
+                let j5 = i.strIngredient5 ?? ""
+                let j6 = i.strIngredient6 ?? ""
+                let j7 = i.strIngredient7 ?? ""
+                let j8 = i.strIngredient8 ?? ""
+                let j9 = i.strIngredient9 ?? ""
+                let j10 = i.strIngredient10 ?? ""
+                let j11 = i.strIngredient11 ?? ""
+                let j12 = i.strIngredient12 ?? ""
+                let j13 = i.strIngredient13 ?? ""
+                let j14 = i.strIngredient14 ?? ""
+                let j15 = i.strIngredient15 ?? ""
+                let j16 = i.strIngredient16 ?? ""
+                let j17 = i.strIngredient17 ?? ""
+                let j18 = i.strIngredient18 ?? ""
+                let j19 = i.strIngredient19 ?? ""
+                let j20 = i.strIngredient20 ?? ""
+                information.ingr = [j1, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11, j12, j13, j14, j15, j16, j17, j18, j19, j20]
+                
+                information.source = i.strSource ?? ""
             }
         }
     }
