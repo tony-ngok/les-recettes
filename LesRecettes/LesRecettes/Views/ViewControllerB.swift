@@ -37,19 +37,21 @@ class ViewControllerB: UIViewController {
         m.id = idRecette
         m.obtenir()
         
-        img.image = m.information.img
-        nom.text = m.information.nom
-        instr.text = m.information.instr
-        lien.text = m.information.vid
-        source.text = m.information.source
-        
-        // https://www.donnywals.com/how-to-filter-an-array-in-swift/
-        let filtré = m.information.ingr.filter { i in
-            return i.count > 0
+        DispatchQueue.main.async { [self] in
+            img.image = m.information.img
+            nom.text = m.information.nom
+            instr.text = m.information.instr
+            lien.text = m.information.vid
+            source.text = m.information.source
+            
+            // https://www.donnywals.com/how-to-filter-an-array-in-swift/
+            let filtré = m.information.ingr.filter { i in
+                return i.count > 0
+            }
+            
+            // https://www.programiz.com/swift-programming/library/array/joined
+            ingr.text = filtré.joined(separator: "\n")
         }
-        
-        // https://www.programiz.com/swift-programming/library/array/joined
-        ingr.text = filtré.joined(separator: "\n")
     }
     
     // https://stackoverflow.com/questions/33658521/how-to-make-a-uilabel-clickable

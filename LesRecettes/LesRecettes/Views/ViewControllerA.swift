@@ -53,8 +53,13 @@ class ViewControllerA: UIViewController, UICollectionViewDataSource, UICollectio
     }
     
     func initLeModèle() {
-        modèle.rechercher()
-        tableau.reloadData()
+        // run search on non-main thread
+        self.modèle.rechercher()
+        
+        // run main-thread afterwards
+        DispatchQueue.main.async {
+            self.tableau.reloadData()
+        }
     }
     
 }

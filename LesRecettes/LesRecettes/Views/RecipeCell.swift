@@ -12,10 +12,10 @@ class RecipeCell: UICollectionViewCell {
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var nom: UILabel!
     
-    class var id: String {
+    static var id: String {
         return String(describing: self)
     }
-    class var nib: UINib {
+    static var nib: UINib {
         return UINib(nibName: id, bundle: nil)
     }
     
