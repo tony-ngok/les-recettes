@@ -35,7 +35,3 @@ struct InfoDeRecette: Decodable {
     let strIngredient19: String?
     let strIngredient20: String?
 }
-
-struct Infos: Decodable {
-    let meals: [InfoDeRecette]
-}

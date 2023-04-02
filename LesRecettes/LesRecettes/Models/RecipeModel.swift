@@ -17,7 +17,3 @@ struct Recette: Decodable {
     let strMealThumb: String
     let idMeal: String
 }
-
-struct Recettes: Decodable {
-    let meals: [Recette]
-}
