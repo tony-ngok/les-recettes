@@ -7,12 +7,8 @@
 
 import Foundation
 
-let apiRecettes = "https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian"
-let apiUneRecette = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
-var résultats = [Recette]()
-
 // Model: data layer (data representation)
-struct Recette: Decodable {
+struct Recette: Codable {
     let strMeal: String
     let strMealThumb: String
     let idMeal: String
