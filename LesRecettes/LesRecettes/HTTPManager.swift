@@ -5,8 +5,6 @@
 //  Created by Tony NGOK on 02/04/2023.
 //
 
-let apiUneRecette = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
-
 import Foundation
 
 // https://stevenpcurtis.medium.com/mvvm-in-swift-19ba3f87ed45
