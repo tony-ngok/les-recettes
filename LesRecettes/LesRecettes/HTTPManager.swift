@@ -6,7 +6,6 @@
 //
 
 let apiUneRecette = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
-let apiRecettes = "https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian"
 
 import Foundation
 
@@ -57,7 +56,7 @@ class HTTPManager {
                 return
             }
             if ((r.statusCode < 200) || (r.statusCode >= 300)) {
-                print("ERROR \(r.statusCode)")
+                print("ERROR", r.statusCode)
                 finir(.failure(ErreursHTTP.réponseInvalide(d, r)))
                 return
             }

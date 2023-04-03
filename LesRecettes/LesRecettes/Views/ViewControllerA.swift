@@ -14,12 +14,12 @@ class ViewControllerA: UIViewController, UICollectionViewDataSource, UICollectio
     
     @IBOutlet weak var tableau: UICollectionView!
     
-    var modèle = RecipesViewModel() // initialise view model
+    var modèle = [Recette]() // initialise view model
     var idActuelle = ""
     
     // View: present data in user interface
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return modèle.cellules.count // # of cells
+        return modèle.count // # of cells
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
