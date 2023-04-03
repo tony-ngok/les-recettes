@@ -5,7 +5,8 @@
 //  Created by Tony Ngok on 06/03/2023.
 //
 
-// MVVM Tutorial: https://johncodeos.com/how-to-implement-mvvm-pattern-with-swift-in-ios/
+// MVVM Tutorial 1: https://stevenpcurtis.medium.com/mvvm-in-swift-19ba3f87ed45
+// MVVM Tutorial 2: https://johncodeos.com/how-to-implement-mvvm-pattern-with-swift-in-ios/
 
 import UIKit
 
@@ -24,12 +25,12 @@ class ViewControllerA: UIViewController, UICollectionViewDataSource, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellule = tableau.dequeueReusableCell(withReuseIdentifier: RecipeCell.id, for: indexPath) as! RecipeCell
-        cellule.mod = modèle.unModèle(at: indexPath)
+        cellule.mod = modèle.cellules[indexPath.row]
         return cellule
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.idActuelle = modèle.unModèle(at: indexPath).id
+        self.idActuelle = modèle.cellules[indexPath.row].idMeal
         self.performSegue(withIdentifier: "info", sender: self)
     }
     
@@ -43,23 +44,20 @@ class ViewControllerA: UIViewController, UICollectionViewDataSource, UICollectio
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         initLeTableau()
-        initLeModèle()
+        
+        // initialising the table view
+        modèle.rechercher(finir: { [self] cellules in
+            // handel network recett
+            DispatchQueue.main.async {
+                self.tableau.reloadData()
+            }
+        })
     }
     
     func initLeTableau() {
         tableau.dataSource = self
         tableau.delegate = self
         tableau.register(RecipeCell.nib, forCellWithReuseIdentifier: RecipeCell.id)
-    }
-    
-    func initLeModèle() {
-        // run search on non-main thread
-        self.modèle.rechercher()
-        
-        // run main-thread afterwards
-        DispatchQueue.main.async {
-            self.tableau.reloadData()
-        }
     }
     
 }

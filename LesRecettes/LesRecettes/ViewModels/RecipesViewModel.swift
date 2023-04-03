@@ -18,22 +18,6 @@ class RecipesViewModel: NSObject {
     // get a list of recipes
     // @escaping: either get list of models (success) or error (failure)
     func rechercher(finir: @escaping (Result<[Recette], Error>) -> Void) {
-//        guard let url = URL(string: apiRecettes) else {
-//            return
-//        }
-//        if let données = try? Data(contentsOf: url) {
-//            if let r = try? JSONDecoder().decode(Recettes.self, from: données) {
-//                for rc in r.meals {
-//                    guard let urlImg = URL(string: rc.strMealThumb) else {
-//                        return
-//                    }
-//                    if let donnéeImg = try? Data(contentsOf: urlImg) {
-//                        let img = UIImage(data: donnéeImg) ?? UIImage()
-//                        cellules.append(RecipeCellViewModel(img: img, nom: rc.strMeal, id: rc.idMeal))
-//                    }
-//                }
-//            }
-//        }
         // handel HTTP request: if success, populate data
         HTTPManager().GET(de: apiRecettes, finir: { [self] résultat in
             switch résultat {
@@ -41,18 +25,14 @@ class RecipesViewModel: NSObject {
                 print("Failure:", erreur)
             case .success(let données):
                 do {
-                    let d = try JSONDecoder().decode([Recette].self, from: données)
-                    self.cellules = d // populate data
-                    finir(.success(d))
+                    let d = try JSONDecoder().decode(Recettes.self, from: données)
+                    self.cellules = d.meals // populate data
+                    finir(.success(d.meals))
                 } catch {
                     print("JSON decoder error")
                 }
             }
         })
-    }
-    
-    func unModèle(at indexPath: IndexPath) -> Recette {
-        return cellules[indexPath.row]
     }
     
 }

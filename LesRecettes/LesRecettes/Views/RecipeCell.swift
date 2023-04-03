@@ -20,10 +20,18 @@ class RecipeCell: UICollectionViewCell {
     }
     
     // pseudo-initialiser: «initialise» class w/ cell view model
-    var mod: RecipeCellViewModel? {
+    var mod: Recette? {
         didSet {
-            img.image = self.mod?.img
-            nom.text = self.mod?.nom
+            nom.text = self.mod?.strMeal
+            
+            img.image = UIImage()
+            guard let urlImg = URL(string: self.mod?.strMealThumb ?? "") else {
+                return
+            }
+            if let donnéeImg = try? Data(contentsOf: urlImg) {
+                let img = UIImage(data: donnéeImg) ?? UIImage()
+                self.img.image = img
+            }
         }
     }
     
