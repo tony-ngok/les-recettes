@@ -47,11 +47,11 @@ class ViewControllerA: UIViewController, UICollectionViewDataSource, UICollectio
         initLeTableau()
         
         // initialising the table view
-        self.modèle.obtenir()
-        print(self.modèle.cellules)
-        DispatchQueue.main.async {
-            self.tableau.reloadData()
+        DispatchQueue.global().sync {
+            self.modèle.obtenir()
         }
+        print("2", self.modèle.cellules)
+        self.tableau.reloadData()
         
     }
     

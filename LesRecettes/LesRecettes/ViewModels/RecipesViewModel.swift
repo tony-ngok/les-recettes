@@ -22,6 +22,7 @@ class RecipesViewModel: NSObject {
                 print("Cannot get recipes.")
             case .success(let données):
                 self.cellules = données // if request succeed, populate data
+                print("1", self.cellules)
             }
         })
     }
