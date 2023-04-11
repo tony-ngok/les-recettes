@@ -5,9 +5,9 @@
 //  Created by Tony Ngok on 06/03/2023.
 //
 
-// MVVM Tutorial 1: https://johncodeos.com/how-to-implement-mvvm-pattern-with-swift-in-ios/
+// MVVM Tutorial 1: https://johncodeos.com/how-to-implement-mvvm-pattern-with-swift-in-ios
 // MVVM Tutorial 2: https://stevenpcurtis.medium.com/mvvm-in-swift-19ba3f87ed45
-// MVVM Tutorial 3: https://tech.olx.com/clean-architecture-and-mvvm-on-ios-c9d167d9f5b3
+// MVVM Tutorial 3: https://blog.devgenius.io/data-repository-layer-in-ios-mvvm-562541b46f91
 
 import UIKit
 

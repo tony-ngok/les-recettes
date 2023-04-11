@@ -8,7 +8,7 @@
 import Foundation
 
 // Model: data layer (data representation)
-struct Recette: Codable {
+struct Recette: Decodable {
     let strMeal: String
     let strMealThumb: String
     let idMeal: String

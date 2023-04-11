@@ -7,4 +7,9 @@
 
 import Foundation
 
-
+// Use case (domain layer): search for & store results
+class RecipesUseCase {
+    
+    
+    
+}

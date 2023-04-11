@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Infos: Codable {
+struct Infos: Decodable {
     let meals: [InfoDeRecette]
 }
