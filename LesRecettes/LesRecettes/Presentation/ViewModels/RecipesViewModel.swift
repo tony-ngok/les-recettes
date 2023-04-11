@@ -9,8 +9,9 @@ import UIKit
 
 let apiRecettes = "https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian"
 
-// View model: intermediate between model & view
-// responsable for getting data from internet & displaying data
+// View model: intermediate between model & view;
+// responsable for getting data from internet & displaying data;
+// executes use case
 class RecipesViewModel: NSObject {
     
     var cellules = [Recette]()
