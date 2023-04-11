@@ -14,7 +14,6 @@ class InfosViewModel: NSObject {
     var id: String = ""
     var information = InfoDeRecette(strMeal: "", strMealThumb: "", strInstructions: "", strYoutube: "", strSource: "", strIngredient1: "", strIngredient2: "", strIngredient3: "", strIngredient4: "", strIngredient5: "", strIngredient6: "", strIngredient7: "", strIngredient8: "", strIngredient9: "", strIngredient10: "", strIngredient11: "", strIngredient12: "", strIngredient13: "", strIngredient14: "", strIngredient15: "", strIngredient16: "", strIngredient17: "", strIngredient18: "", strIngredient19: "", strIngredient20: "")
     
-    
     func obtenir(finir: @escaping (Result<InfoDeRecette, Error>) -> Void) {
         HTTPManager().GET(de: apiUneRecette+self.id, finir: { [self] résultat in
             switch résultat{
