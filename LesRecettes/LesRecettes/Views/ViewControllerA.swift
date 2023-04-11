@@ -47,12 +47,12 @@ class ViewControllerA: UIViewController, UICollectionViewDataSource, UICollectio
         initLeTableau()
         
         // initialising the table view
-        modèle.rechercher(finir: { [self] cellules in
-            // handel network recett
-            DispatchQueue.main.async {
-                self.tableau.reloadData()
-            }
-        })
+        self.modèle.obtenir()
+        print(self.modèle.cellules)
+        DispatchQueue.main.async {
+            self.tableau.reloadData()
+        }
+        
     }
     
     func initLeTableau() {
