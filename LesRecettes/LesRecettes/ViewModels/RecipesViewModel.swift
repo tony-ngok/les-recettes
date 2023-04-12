@@ -15,14 +15,14 @@ class RecipesViewModel: NSObject {
     let repo = RecipesRepo()
     var cellules = [Recette]()
     
-    func obtenir() {
+    func obtenir(finir: @escaping(Bool) -> Void) {
         repo.rechercher(finir: { résultat in
             switch résultat {
             case .failure(_):
-                print("Cannot get recipes.")
+                finir(false)
             case .success(let données):
                 self.cellules = données // if request succeed, populate data
-                print("1", self.cellules)
+                finir(true)
             }
         })
     }

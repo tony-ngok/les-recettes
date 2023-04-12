@@ -47,12 +47,16 @@ class ViewControllerA: UIViewController, UICollectionViewDataSource, UICollectio
         initLeTableau()
         
         // initialising the table view
-        DispatchQueue.global().sync {
-            self.modèle.obtenir()
-        }
-        print("2", self.modèle.cellules)
-        self.tableau.reloadData()
-        
+        self.modèle.obtenir(finir: { recherché in
+            switch recherché {
+            case true:
+                DispatchQueue.main.async {
+                    self.tableau.reloadData()
+                }
+            case false:
+                print("Cannot get recipes.")
+            }
+        })
     }
     
     func initLeTableau() {
