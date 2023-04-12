@@ -12,10 +12,10 @@ import UIKit
 // executes use case
 class RecipesViewModel: NSObject {
     
-    let repo = RecipesRepo()
+    private let repo = RecipesRepo()
     var cellules = [Recette]()
     
-    func obtenir(finir: @escaping(Bool) -> Void) {
+    func obtenir(finir: @escaping (Bool) -> Void) {
         repo.rechercher(finir: { résultat in
             switch résultat {
             case .failure(_):

@@ -7,15 +7,11 @@
 
 import Foundation
 
-enum ErreurJSON: Error {
-    case erreur
-}
-
-let apiRecettes = "https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian"
-
-// Repository: handle network requests
-// direct communicate with network layer (HTTP manager) to fetch data
+// Repository: handle network requests;
+// communicate directly with network layer (HTTP manager) to fetch data
 class RecipesRepo {
+    
+    private let apiRecettes = "https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian"
     
     // get a list of recipes
     // @escaping: either get list of models (success) or error (failure)
@@ -32,7 +28,7 @@ class RecipesRepo {
                     finir(.success(d.meals)) // retrieve data
                 } catch {
                     print("JSON decoder error")
-                    finir(.failure(ErreurJSON.erreur))
+                    finir(.failure(Erreurs.erreurJSON))
                 }
             }
         })

@@ -28,6 +28,7 @@
 		E5A23A6329C3527F009EA636 /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5A23A6129C3527F009EA636 /* RecipeCell.xib */; };
 		E5A23A6529C358A2009EA636 /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A23A6429C358A2009EA636 /* RecipesViewModel.swift */; };
 		E5A23A6B29C37005009EA636 /* ViewControllerB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A23A6A29C37005009EA636 /* ViewControllerB.swift */; };
+		E5A3398729E63BD500C96EE8 /* Erreurs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A3398629E63BD500C96EE8 /* Erreurs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		E5A23A6129C3527F009EA636 /* RecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
 		E5A23A6429C358A2009EA636 /* RecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		E5A23A6A29C37005009EA636 /* ViewControllerB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerB.swift; sourceTree = "<group>"; };
+		E5A3398629E63BD500C96EE8 /* Erreurs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Erreurs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				E5122EE729BFD1EE00F79421 /* Models */,
 				E589F3DB29E5E5D800B728B1 /* Repositories */,
 				E5A0CF1429D9C6A1008D95F3 /* HTTPManager.swift */,
+				E5A3398629E63BD500C96EE8 /* Erreurs.swift */,
 				E507DC6029B65F0C00B7CC1D /* AppDelegate.swift */,
 				E507DC6229B65F0C00B7CC1D /* SceneDelegate.swift */,
 				E507DC6629B65F0C00B7CC1D /* Main.storyboard */,
@@ -337,6 +340,7 @@
 				E5A0CF1529D9C6A1008D95F3 /* HTTPManager.swift in Sources */,
 				E5A0CF1329D9C62E008D95F3 /* Infos.swift in Sources */,
 				E507DC6529B65F0C00B7CC1D /* ViewControllerA.swift in Sources */,
+				E5A3398729E63BD500C96EE8 /* Erreurs.swift in Sources */,
 				E5122EE929BFD20C00F79421 /* Recette.swift in Sources */,
 				E507DC6129B65F0C00B7CC1D /* AppDelegate.swift in Sources */,
 				E507DC6329B65F0C00B7CC1D /* SceneDelegate.swift in Sources */,

@@ -7,14 +7,6 @@
 
 import Foundation
 
-// https://stevenpcurtis.medium.com/mvvm-in-swift-19ba3f87ed45
-enum ErreursHTTP: Error {
-    case urlInvalide
-    case pasDeDonnées
-    case pasDeRéponse
-    case réponseInvalide(Data?, URLResponse?)
-}
-
 // HTTP manager: singleton to handle network requests
 class HTTPManager {
     
@@ -25,7 +17,7 @@ class HTTPManager {
         // step 1: check whether URL valid
         guard let url = URL(string: de) else {
             print("ERROR: Invalid URL")
-            finir(.failure(ErreursHTTP.urlInvalide))
+            finir(.failure(Erreurs.urlInvalide))
             return
         }
         
@@ -43,19 +35,19 @@ class HTTPManager {
             // https://stackoverflow.com/questions/70777570/guard-let-foo-foo-vs-guard-foo-nil-in-swift
             guard let d = données else {
                 print("ERROR: No data obtained")
-                finir(.failure(ErreursHTTP.pasDeDonnées))
+                finir(.failure(Erreurs.pasDeDonnées))
                 return
             }
             
             // step 2c: handel failing HTTP response
             guard let r = réponse as? HTTPURLResponse else {
                 print("ERROR: Failed to get HTTP response")
-                finir(.failure(ErreursHTTP.pasDeRéponse))
+                finir(.failure(Erreurs.pasDeRéponse))
                 return
             }
             if ((r.statusCode < 200) || (r.statusCode >= 300)) {
                 print("ERROR", r.statusCode)
-                finir(.failure(ErreursHTTP.réponseInvalide(d, r)))
+                finir(.failure(Erreurs.réponseInvalide(d, r)))
                 return
             }
             

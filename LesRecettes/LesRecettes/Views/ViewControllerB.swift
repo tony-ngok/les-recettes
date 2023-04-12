@@ -25,16 +25,22 @@ class ViewControllerB: UIViewController {
         // Do any additional setup after loading the view.
         print("Recipe ID: \(idRecette)")
         m.id = idRecette
-        m.obtenir(finir: { [self] information in
-            DispatchQueue.main.async {
-                self.initialisation()
-                
-                // https://stackoverflow.com/questions/33658521/how-to-make-a-uilabel-clickable
-                let leLien = UITapGestureRecognizer(target: self, action: #selector(ViewControllerB.ouvrirLeLien))
-                self.lien.addGestureRecognizer(leLien)
-                let leSource = UITapGestureRecognizer(target: self, action: #selector(ViewControllerB.ouvrirLeSource))
-                self.source.addGestureRecognizer(leSource)
+        m.obtenir(finir: { réussi in
+            switch réussi {
+            case true:
+                DispatchQueue.main.async {
+                    self.initialisation()
+                    
+                    // https://stackoverflow.com/questions/33658521/how-to-make-a-uilabel-clickable
+                    let leLien = UITapGestureRecognizer(target: self, action: #selector(ViewControllerB.ouvrirLeLien))
+                    self.lien.addGestureRecognizer(leLien)
+                    let leSource = UITapGestureRecognizer(target: self, action: #selector(ViewControllerB.ouvrirLeSource))
+                    self.source.addGestureRecognizer(leSource)
+                }
+            case false:
+                print("Cannot get recipe info.")
             }
+            
         })
     }
     
